@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Strings from '@/components/Tuner/Strings'
 import StringSelect from '@/components/Tuner/StringSelect'
 export default {
@@ -26,27 +27,15 @@ export default {
         StringSelect
     },
     computed: {
-        selected() {
-            return this.$store.state.initialState.selected
-        },
-        tuning() {
-            return this.$store.state.initialState.tuning
-        },
-        animated_key() {
-            return this.$store.state.initialState.animated_key
-        },
-        standards() {
-            return this.$store.state.initialState.standards
-        },
-        down_halfs() {
-            return this.$store.state.initialState.down_halfs
-        },
-        down_ones() {
-            return this.$store.state.initialState.down_ones
-        },
-        down_twos() {
-            return this.$store.state.initialState.down_twos
-        },
+        ...mapState([
+            'selected',
+            'tuning',
+            'animated_key',
+            'standards',
+            'down_halfs',
+            'down_ones',
+            'down_twos'
+        ])
     }
 }
 </script>

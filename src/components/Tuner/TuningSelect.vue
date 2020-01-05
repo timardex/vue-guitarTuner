@@ -18,14 +18,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
     computed: {
-        selected() {
-            return this.$store.state.initialState.selected
-        },
-        tunings() {
-            return this.$store.state.initialState.tunings
-        }
+        ...mapState([
+            'selected',
+            'tunings',
+        ])
     },
     methods: {
         tuningSelect: function(event) {

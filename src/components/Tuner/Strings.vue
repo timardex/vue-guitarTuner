@@ -16,23 +16,16 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
     computed: {
-        selected() {
-            return this.$store.state.initialState.selected
-        },
-        standards() {
-            return this.$store.state.initialState.standards
-        },
-        down_halfs() {
-            return this.$store.state.initialState.down_halfs
-        },
-        down_ones() {
-            return this.$store.state.initialState.down_ones
-        },
-        down_twos() {
-            return this.$store.state.initialState.down_twos
-        },
+        ...mapState([
+            'selected',
+            'standards',
+            'down_halfs',
+            'down_ones',
+            'down_twos'
+        ])
     }
 }
 </script>

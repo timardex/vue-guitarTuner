@@ -1,4 +1,4 @@
-const initialState = {
+const state = {
     selected: 'Standard Tuning E',
     animated_key: '',
     tuning: '',
@@ -239,4 +239,4 @@ const initialState = {
     ],
 }
 
-export default initialState;
+export default state;

@@ -1,43 +1,41 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import initialState from './initialState'
+import state from './initialState'
 import {playSound, pauseSound, animationEnd} from './helpers'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
-    initialState
-  },
+  state,
   mutations: {
     TUNING_SELECT: (state, payload) => {
-      state.initialState.selected = payload;
-      state.initialState.animated_key = 'rotate';
-      state.initialState.tuning = 'tuning';
-      state.initialState.bounceIn = 'bounceIn';
+      state.selected = payload;
+      state.animated_key = 'rotate';
+      state.tuning = 'tuning';
+      state.bounceIn = 'bounceIn';
     },
     SELECTED_TUNE: (state) => {
-      state.initialState.animated_key = '';
-      state.initialState.tuning = '';
-      state.initialState.bounceIn = '';
+      state.animated_key = '';
+      state.tuning = '';
+      state.bounceIn = '';
     },
     PLAY: (state, payload) => {
-      state.initialState.standards = playSound(state.initialState.standards, payload);
-      state.initialState.down_halfs = playSound(state.initialState.down_halfs, payload);
-      state.initialState.down_ones = playSound(state.initialState.down_ones, payload);
-      state.initialState.down_twos = playSound(state.initialState.down_twos, payload);
+      state.standards = playSound(state.standards, payload);
+      state.down_halfs = playSound(state.down_halfs, payload);
+      state.down_ones = playSound(state.down_ones, payload);
+      state.down_twos = playSound(state.down_twos, payload);
     },
     PAUSE: (state, payload) => {
-      state.initialState.standards = pauseSound(state.initialState.standards, payload);
-      state.initialState.down_halfs = pauseSound(state.initialState.down_halfs, payload);
-      state.initialState.down_ones = pauseSound(state.initialState.down_ones, payload);
-      state.initialState.down_twos = pauseSound(state.initialState.down_twos, payload);
+      state.standards = pauseSound(state.standards, payload);
+      state.down_halfs = pauseSound(state.down_halfs, payload);
+      state.down_ones = pauseSound(state.down_ones, payload);
+      state.down_twos = pauseSound(state.down_twos, payload);
     },
     ANIMATION_END: (state, payload) => {
-      state.initialState.standards = animationEnd(state.initialState.standards, payload);
-      state.initialState.down_halfs = animationEnd(state.initialState.down_halfs, payload);
-      state.initialState.down_ones = animationEnd(state.initialState.down_ones, payload);
-      state.initialState.down_twos = animationEnd(state.initialState.down_twos, payload);
+      state.standards = animationEnd(state.standards, payload);
+      state.down_halfs = animationEnd(state.down_halfs, payload);
+      state.down_ones = animationEnd(state.down_ones, payload);
+      state.down_twos = animationEnd(state.down_twos, payload);
     },
 
   },
