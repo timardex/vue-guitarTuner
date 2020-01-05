@@ -27,10 +27,10 @@ export default {
         ])
     },
     methods: {
-        tuningSelect: function(event) {
+        tuningSelect (event) {
             this.$store.dispatch('tuningSelect', event.target.value);
         },
-        selectedTuned: function() {
+        selectedTuned () {
             setTimeout(() => {
                 this.$store.dispatch('selectedTuned');
             }, 2000)

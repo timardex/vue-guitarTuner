@@ -29,10 +29,10 @@ export default {
         ])
     },
     methods: {
-        pause: function (element) {
+        pause (element) {
             this.$store.dispatch('pause', element)
         },
-        play: function (element) {
+        play (element) {
             this.$store.dispatch('play', element)
 
             setTimeout(() => {
